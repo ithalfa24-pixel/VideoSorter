@@ -7,6 +7,10 @@ workflows:
     scripts:
       - name: Extract project
         script: unzip VideoSorter.zip
+      - name: Add gradle.properties
+        script: |
+          echo "android.useAndroidX=true" >> VideoSorter/gradle.properties
+          echo "android.enableJetifier=true" >> VideoSorter/gradle.properties
       - name: Build APK
         script: |
           cd VideoSorter
