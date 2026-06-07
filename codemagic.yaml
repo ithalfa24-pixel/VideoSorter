@@ -11,9 +11,6 @@ workflows:
         script: |
           cd VideoSorter
           gradle wrapper --gradle-version 8.2
-          JAVA_PATH=$(dirname $(dirname $(readlink -f $(which java))))
-          export JAVA_HOME=$JAVA_PATH
-          export PATH=$JAVA_HOME/bin:$PATH
           ./gradlew assembleDebug
     artifacts:
       - VideoSorter/app/build/outputs/apk/debug/app-debug.apk
