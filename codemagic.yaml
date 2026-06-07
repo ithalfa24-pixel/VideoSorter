@@ -10,6 +10,9 @@ workflows:
       - name: Build APK
         script: |
           cd VideoSorter
+          gradle wrapper --gradle-version 8.2
+          export JAVA_HOME=/usr/local/sdkman/candidates/java/17.0.9-tem
+          export PATH=$JAVA_HOME/bin:$PATH
           ./gradlew assembleDebug
     artifacts:
       - VideoSorter/app/build/outputs/apk/debug/app-debug.apk
